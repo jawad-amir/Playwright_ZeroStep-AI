@@ -21,8 +21,7 @@ jobs:
       run: npx playwright install --with-deps
     - name: Install zeroStep Dependencies
       run: npm i @zerostep/playwright -D
-      - shell: bash
-        env: 
+      env: 
           ZeroStep: ${{ secrets.ZEROSTEP_API_TOKEN }}
     - name: Run Playwright tests
       run: npx playwright test
