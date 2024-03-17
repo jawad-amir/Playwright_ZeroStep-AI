@@ -5,9 +5,6 @@ on:
   pull_request:
     branches: [ main, master ]
 
-env:
-  ZeroStep: ${{ secrets.ZEROSTEP_API_TOKEN }}
-
 
 jobs:
   test:
@@ -26,6 +23,9 @@ jobs:
       run: npm i @zerostep/playwright -D
     - name: Run Playwright tests
       run: npx playwright test
+    - uses: 
+        env: 
+          ZeroStep: ${{ secrets.ZEROSTEP_API_TOKEN }}
     - uses: actions/upload-artifact@v3
       if: always()
       with:
