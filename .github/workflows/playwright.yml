@@ -5,9 +5,6 @@ on:
   pull_request:
     branches: [ main, master ]
 
-env:
-  ZEROSTEP_API_TOKEN: ${{ secrets.ZEROSTEP_TOKEN }}
-
 jobs:
   test:
     timeout-minutes: 60
@@ -22,6 +19,10 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
+    - name: Install zeroStep Dependencies
+      run: npm i @zerostep/playwright -D
+        env:
+          ZEROSTEP_API_TOKEN: ${{ secrets.ZEROSTEP_TOKEN }}
       run: npx playwright test
     - uses: actions/upload-artifact@v3
       if: always()

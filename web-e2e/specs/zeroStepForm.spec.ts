@@ -10,4 +10,4 @@ import { ai } from '@zerostep/playwright';
     await ai("Click on the First Option from the dropdown", { page, test });
     await ai("Click on the first link from the Search Results", { page,test});
     await ai("The Playwright hyperlink should be visible on the header of the page", { page, test });
-  })
+  });
