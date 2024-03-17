@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@playwright/test": "^1.42.1"
+  },
+  "devDependencies": {
+    "@zerostep/playwright": "^0.1.5"
+  }
+}
