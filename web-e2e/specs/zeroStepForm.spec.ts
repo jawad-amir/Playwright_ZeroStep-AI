@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import { ai } from '@zerostep/playwright';
 
-  test('Search on Google with Playwright AI test', async ({ page }) => {
+  test('Search on Google with Playwright AI', async ({ page }) => {
     await page.goto('https://www.google.com');
     await page.waitForURL('https://www.google.com');
 
