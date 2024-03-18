@@ -5,6 +5,8 @@ on:
   pull_request:
     branches: [ main, master ]
 
+env: 
+    ZEROSTEP_TOKEN: ${{ secrets.ZEROSTEP_TOKEN }}
 
 jobs:
   test:
@@ -21,8 +23,6 @@ jobs:
       run: npx playwright install --with-deps
     - name: Install zeroStep Dependencies
       run: npm i @zerostep/playwright -D
-      env: 
-        ZEROSTEP_TOKEN: ${{ secrets.ZEROSTEP_TOKEN }}
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v3
