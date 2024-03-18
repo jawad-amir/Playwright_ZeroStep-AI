@@ -22,7 +22,7 @@ jobs:
     - name: Install zeroStep Dependencies
       run: npm i @zerostep/playwright -D
       env: 
-          ZeroStep: ${{ secrets.ZEROSTEP_API_TOKEN }}
+        ZEROSTEP_TOKEN: ${{ secrets.ZEROSTEP_TOKEN }}
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v3
