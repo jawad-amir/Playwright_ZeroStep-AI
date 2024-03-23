@@ -26,7 +26,7 @@ jobs:
     # - name: Install zeroStep Dependencies
     #   run: npm i @zerostep/playwright -D
     - name: Run Playwright tests
-      run: npx playwright test
+      run: npx playwright test --headed
     - uses: actions/upload-artifact@v3
       if: always()
       with:
