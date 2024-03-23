@@ -19,6 +19,8 @@ jobs:
         node-version: 18
     - name: Install dependencies
       run: npm ci
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
     - name: Install All Dependencies
       run: yarn
     # - name: Install zeroStep Dependencies
