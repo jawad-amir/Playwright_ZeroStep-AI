@@ -1,6 +1,7 @@
 import { test } from '@playwright/test';
 import { ai } from '@zerostep/playwright';
 
+test.describe('Automate a Playwright Test with AI', () => {
   test('Search on Google with Playwright AI', async ({ page }) => {
     await page.goto('https://www.google.com');
     await page.waitForURL('https://www.google.com');
@@ -11,3 +12,4 @@ import { ai } from '@zerostep/playwright';
     await ai("Click on the first link from the Search Results", { page,test});
     await ai("The Playwright hyperlink should be visible on the header of the page", { page, test });
   });
+});
