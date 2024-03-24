@@ -4,8 +4,6 @@ import { ai } from '@zerostep/playwright'
   test('Search on Google with Playwright AI', async ({ page }) => {
 
     await ai('Navigate to this URL https://www.google.com', { page, test})
-    await page.waitForURL('https://www.google.com')
-
     await ai('In the search field type Playwright', { page, test })
     await ai('Wait for the results to appear in the dropdown', { page, test})
     await ai('Click on the First Option from the dropdown', { page, test })
